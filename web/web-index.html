@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验室</title>
+    <style>
+        :root {
+            --color-bg: #0a0b0f;
+            --color-primary: #00ff9d;
+            --color-secondary: #16181d;
+            --color-text: #ffffff;
+            --color-text-secondary: #8b8d91;
+            --color-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+        }
+
+        .lab-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航栏样式 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 60px;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-text);
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            background: var(--color-primary);
+            color: var(--color-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 功能区块样式 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 40px 0;
+        }
+
+        .feature-card {
+            background: var(--color-secondary);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .card-content h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .card-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .action-link {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-link:hover {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+        }
+
+        .action-link.primary {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <!-- 导航栏 -->
+        <nav class="nav">
+            <div class="nav-logo">实验室</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">项目文档</a>
+                <a href="#" class="nav-link">搜索必备</a>
+                <a href="#" class="nav-link">灵感专区</a>
+                <a href="#" class="nav-link">英语学习</a>
+                <a href="#" class="nav-button">开始使用</a>
+            </div>
+        </nav>
+
+        <!-- 功能区块 -->
+        <div class="features-grid">
+            <!-- 项目文档 -->
+            <div class="feature-card">
+                <div class="card-content">
+                    <h2>项目文档</h2>
+                    <p>高效管理，便捷访问，智能协作</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link primary">进一步了解</a>
+                        <a href="#" class="action-link">立即使用</a>
+                    </div>
+                </div>
+                <div class="card-decoration"></div>
+            </div>
+
+            <!-- 搜索必备 -->
+            <div class="feature-card">
+                <div class="card-content">
+                    <h2>搜索必备</h2>
+                    <p>创意无限，灵感永续</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link primary">进一步了解</a>
+                        <a href="#" class="action-link">立即使用</a>
+                    </div>
+                </div>
+                <div class="card-decoration"></div>
+            </div>
+
+            <!-- 灵感专区 -->
+            <div class="feature-card">
+                <div class="card-content">
+                    <h2>灵感专区</h2>
+                    <p>精彩瞬间，完美呈现</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link primary">进一步了解</a>
+                        <a href="#" class="action-link">立即使用</a>
+                    </div>
+                </div>
+                <div class="card-decoration"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // 动态创建粒子
+    function createParticles() {
+        const particlesContainer = document.querySelector('.particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // 添加3D视差效果
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+        
+        document.querySelector('.tech-background').style.transform = 
+            `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    // 页面加载时创建粒子
+    window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html> 

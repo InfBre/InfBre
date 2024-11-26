@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人工作台</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>工作台</h1>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索所有内容...">
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <h3>常用导航</h3>
+                    <a href="#" class="nav-item active">
+                        <span class="icon">🏠</span>
+                        <span>主页</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">📝</span>
+                        <span>文档中心</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">⭐️</span>
+                        <span>收藏夹</span>
+                    </a>
+                </div>
+                
+                <div class="nav-group">
+                    <h3>资源分类</h3>
+                    <a href="#" class="nav-item">
+                        <span class="icon">📚</span>
+                        <span>技术文档</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">🔧</span>
+                        <span>开发工具</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">📊</span>
+                        <span>数据分析</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">🎨</span>
+                        <span>设计资源</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3>快捷工具</h3>
+                    <a href="#" class="nav-item">
+                        <span class="icon">📅</span>
+                        <span>日程管理</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <span class="icon">✅</span>
+                        <span>待办事项</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 搜索区 -->
+            <div class="global-search">
+                <input type="text" placeholder="搜索文件、文档或工具..." aria-label="搜索">
+                <button class="search-btn" aria-label="搜索">
+                    <span>搜索</span>
+                </button>
+            </div>
+
+            <!-- 最近访问 -->
+            <section class="recent-section">
+                <div class="section-header">
+                    <h2>最近访问</h2>
+                    <a href="#" class="view-all">查看全部</a>
+                </div>
+                <div class="recent-grid">
+                    <a href="#" class="recent-card" aria-label="最近文档">
+                        <div class="card-icon">📄</div>
+                        <div class="card-info">
+                            <h3>技术方案.doc</h3>
+                            <p>2小时前访问</p>
+                        </div>
+                    </a>
+                    <a href="#" class="recent-card">
+                        <div class="card-icon">🔗</div>
+                        <div class="card-info">
+                            <h3>React 官方文档</h3>
+                            <p>今天访问</p>
+                        </div>
+                    </a>
+                    <a href="#" class="recent-card">
+                        <div class="card-icon">📊</div>
+                        <div class="card-info">
+                            <h3>数据分析报告</h3>
+                            <p>昨天访问</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 收藏夹 -->
+            <section class="favorites-section">
+                <div class="section-header">
+                    <h2>我的收藏</h2>
+                    <a href="#" class="view-all">管理收藏</a>
+                </div>
+                <div class="favorites-grid">
+                    <div class="folder-card">
+                        <div class="folder-header">
+                            <span class="folder-icon">📚</span>
+                            <h3>开发文档</h3>
+                        </div>
+                        <div class="folder-links">
+                            <a href="#">React 文档</a>
+                            <a href="#">Vue 教程</a>
+                            <a href="#">TypeScript 手册</a>
+                        </div>
+                    </div>
+                    <div class="folder-card">
+                        <div class="folder-header">
+                            <span class="folder-icon">🛠</span>
+                            <h3>常用工具</h3>
+                        </div>
+                        <div class="folder-links">
+                            <a href="#">在线编辑器</a>
+                            <a href="#">图片处理</a>
+                            <a href="#">代码格式化</a>
+                        </div>
+                    </div>
+                    <div class="folder-card">
+                        <div class="folder-header">
+                            <span class="folder-icon">📊</span>
+                            <h3>数据分析</h3>
+                        </div>
+                        <div class="folder-links">
+                            <a href="#">周报数据</a>
+                            <a href="#">月度统计</a>
+                            <a href="#">年度报告</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 工具快捷方式 -->
+            <section class="tools-section">
+                <div class="section-header">
+                    <h2>常用工具</h2>
+                    <a href="#" class="view-all">自定义</a>
+                </div>
+                <div class="tools-grid">
+                    <a href="#" class="tool-card">
+                        <span class="tool-icon">📝</span>
+                        <span>笔记</span>
+                    </a>
+                    <a href="#" class="tool-card">
+                        <span class="tool-icon">📊</span>
+                        <span>数据统计</span>
+                    </a>
+                    <a href="#" class="tool-card">
+                        <span class="tool-icon">🔍</span>
+                        <span>高级搜索</span>
+                    </a>
+                    <a href="#" class="tool-card">
+                        <span class="tool-icon">⚡️</span>
+                        <span>快捷指令</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,316 @@
+:root {
+    --color-bg: #fbfbfd;
+    --color-text: #1d1d1f;
+    --color-text-secondary: #86868b;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-primary: #0066cc;
+    --color-hover: rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--color-border);
+    padding: 24px;
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header h1 {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.search-box {
+    margin-bottom: 24px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--color-primary);
+}
+
+.nav-group {
+    margin-bottom: 32px;
+}
+
+.nav-group h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background: var(--color-hover);
+}
+
+.nav-item.active {
+    background: var(--color-hover);
+    color: var(--color-primary);
+}
+
+/* 主内容区样式 */
+.main-content {
+    padding: 40px;
+    margin-left: 280px;
+    background: linear-gradient(180deg, var(--color-bg) 0%, #fff 100%);
+}
+
+.global-search {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.global-search input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 17px;
+    padding: 16px 20px;
+}
+
+.global-search input:focus {
+    border-color: var(--color-primary);
+}
+
+.search-btn {
+    padding: 0 24px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    background: var(--color-primary);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 28px;
+    transition: var(--transition-smooth);
+}
+
+.search-btn:hover {
+    opacity: 0.9;
+}
+
+/* 区块通用样式 */
+section {
+    margin-bottom: 48px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+}
+
+.view-all {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 最近访问卡片 */
+.recent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.recent-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition-smooth);
+}
+
+.recent-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    font-size: 24px;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+/* 收藏夹样式 */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.folder-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    transition: var(--transition-smooth);
+}
+
+.folder-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.folder-icon {
+    font-size: 24px;
+}
+
+.folder-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.folder-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.folder-links a:hover {
+    text-decoration: underline;
+}
+
+/* 工具卡片样式 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition-smooth);
+}
+
+.tool-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.tool-icon {
+    font-size: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .favorites-grid,
+    .recent-grid {
+        grid-template-columns: 1fr;
+    }
+} 
